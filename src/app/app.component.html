@@ -1,0 +1,21 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class = "container">
+  <h1 class = "center-align">Cash Tracking</h1>
+
+  <h3 class ="center-align">{{balanse | currency}}</h3>
+
+  <input type = "number" id = "amount" #Input>
+
+  <div class = 'col s6'>
+    <div class ="center-align">
+     <a class="waves-effect waves-light btn" (click) = "AddTransaction(Input, 'income')">Income</a>
+     <a class="waves-effect waves-light btn" (click) = "AddTransaction(Input, 'expense')">Expense</a>
+    </div>
+  </div>
+
+  <ul class="collection">
+    <li class = collection-item> Transactions</li>
+    <li class="collection-item" *ngFor="let transactions of transaction">{{transactions | currency}} <i class="material-icons right">{{icon}}</i> </li>
+  </ul>
+</div>
+<router-outlet></router-outlet>
